@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Truong Yuna — Senior UX/UI Designer</title>
+<meta name="description" content="Senior UX/UI Designer with 10+ years designing SaaS, fintech, edtech and healthcare products for clients in the US, South Korea, Japan and Vietnam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0720; --bg2:#140c3a; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.12);
+  --text:#f2eefc; --muted:#b4abd6; --accent:#8b5cf6; --accent2:#ff6b9d; --accent3:#4f46e5;
+  --grad:linear-gradient(135deg,#4f46e5,#8b5cf6 50%,#ff6b9d);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background:radial-gradient(circle at 15% 10%,rgba(139,92,246,.35),transparent 40%),
+             radial-gradient(circle at 85% 30%,rgba(255,107,157,.18),transparent 40%),
+             radial-gradient(circle at 50% 100%,rgba(79,70,229,.35),transparent 50%),var(--bg)}
+#stars{position:fixed;inset:0;z-index:-1;pointer-events:none}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+section{padding:90px 0}
+h2{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
+h2 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--muted);margin-bottom:40px;max-width:60ch}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(11,7,32,.65);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;letter-spacing:.08em}
+.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{display:flex;gap:26px;list-style:none;font-size:.95rem;color:var(--muted)}
+nav ul a:hover{color:#fff}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer}
+
+/* hero */
+.hero{min-height:88vh;display:flex;align-items:center;padding:60px 0}
+.hero .tag{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.85rem;margin-bottom:22px;background:var(--card)}
+.hero h1{font-size:clamp(2.8rem,9vw,6rem);line-height:1.02;font-weight:800;letter-spacing:-.01em;text-transform:uppercase}
+.hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.role{font-size:clamp(1.1rem,2.4vw,1.5rem);font-weight:500;margin-top:18px}
+.hero p.focus{color:var(--muted);margin-top:6px}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.btn{padding:13px 26px;border-radius:12px;font-weight:600;border:1px solid var(--line);transition:.25s;cursor:pointer;font-family:inherit;font-size:1rem;color:#fff;background:var(--card)}
+.btn.primary{background:var(--grad);border:none;box-shadow:0 10px 30px rgba(139,92,246,.4)}
+.btn:hover{transform:translateY(-3px)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:60px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.stat b{display:block;font-size:2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--muted);font-size:.9rem}
+
+/* cards */
+.grid{display:grid;gap:20px}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;transition:.3s}
+.card:hover{border-color:rgba(139,92,246,.6)}
+.card h3{font-size:1.05rem;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.82rem;padding:5px 12px;border-radius:999px;background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.35);color:#ddd2ff}
+
+/* portfolio */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted);font:inherit;cursor:pointer;transition:.2s}
+.filters button.on,.filters button:hover{background:var(--grad);color:#fff;border-color:transparent}
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.work{border-radius:18px;overflow:hidden;background:var(--card);border:1px solid var(--line);cursor:pointer;transition:.3s;display:flex;flex-direction:column}
+.work:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.7);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.work .cover{aspect-ratio:4/3;background-size:cover;background-position:center;position:relative;display:flex;align-items:flex-end;padding:14px}
+.work .cover .ph{font-size:.75rem;background:rgba(0,0,0,.45);padding:3px 10px;border-radius:999px;backdrop-filter:blur(6px)}
+.work .info{padding:18px 20px 22px}
+.work .cat{font-size:.78rem;color:var(--accent2);text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.work h3{margin:4px 0 6px;font-size:1.15rem}
+.work p{color:var(--muted);font-size:.92rem}
+.hidden{display:none!important}
+.more{text-align:center;margin-top:36px}
+
+/* device mockups */
+.work .cover{padding:0;overflow:hidden}
+.devices{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.devices i{position:absolute;display:block;border-radius:3px}
+.laptop{position:relative;width:66%;aspect-ratio:16/10;background:#0e0a26;border:5px solid #1c1640;border-radius:10px 10px 0 0;box-shadow:0 18px 40px rgba(0,0,0,.45);margin-bottom:6%}
+.laptop::after{content:"";position:absolute;left:-9%;right:-9%;bottom:-12px;height:8px;background:linear-gradient(#3a307a,#241c52);border-radius:0 0 12px 12px}
+.laptop .bar{left:0;right:0;top:0;height:9%;background:rgba(255,255,255,.14);border-radius:0}
+.laptop .side{left:0;top:9%;bottom:0;width:16%;background:rgba(255,255,255,.07);border-radius:0}
+.laptop .b1{left:21%;top:16%;width:34%;height:30%;background:rgba(255,255,255,.2)}
+.laptop .b2{left:59%;top:16%;width:34%;height:30%;background:rgba(255,255,255,.12)}
+.laptop .b3{left:21%;top:52%;width:72%;height:34%;background:rgba(255,255,255,.1)}
+.phone{position:relative;width:24%;aspect-ratio:9/18.5;background:#0e0a26;border:4px solid #1c1640;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.phone .notch{left:34%;right:34%;top:3%;height:3%;background:#1c1640;border-radius:99px}
+.phone .p1{left:10%;right:10%;top:12%;height:20%;background:rgba(255,255,255,.22)}
+.phone .p2{left:10%;right:10%;top:36%;height:14%;background:rgba(255,255,255,.12)}
+.phone .p3{left:10%;right:10%;top:54%;height:14%;background:rgba(255,255,255,.12)}
+.phone .p4{left:10%;right:10%;top:72%;height:14%;background:rgba(255,255,255,.08)}
+.devices.both .laptop{margin-right:14%}
+.devices.both .phone{position:absolute;right:12%;bottom:9%;width:21%}
+.devices.phone-only .phone{width:30%}
+.devices.laptop-only .laptop{width:72%}
+@media(max-width:620px){.devices.both .phone{width:22%}}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(5,3,16,.82);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal .box{background:#150e3a;border:1px solid var(--line);border-radius:22px;max-width:760px;width:100%;max-height:90vh;overflow:auto;position:relative}
+.modal .cover{aspect-ratio:16/8;background-size:cover;background-position:center}
+.modal .body{padding:26px 30px 32px}
+.modal h3{font-size:1.6rem;margin:4px 0 10px}
+.modal ul{margin:14px 0 18px 20px;color:var(--muted)}
+.modal .x{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:none;background:rgba(0,0,0,.55);color:#fff;font-size:1.2rem;cursor:pointer}
+
+/* timeline */
+.timeline{position:relative;padding-left:30px;border-left:2px solid var(--line)}
+.job{position:relative;margin-bottom:30px}
+.job::before{content:"";position:absolute;left:-39px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--grad);box-shadow:0 0 0 5px rgba(139,92,246,.2)}
+.job .when{font-size:.85rem;color:var(--accent2);font-weight:600}
+.job h3{font-size:1.15rem}
+.job .co{color:var(--muted);margin-bottom:8px}
+.job ul{margin-left:18px;color:#d9d2f3;font-size:.95rem}
+.job li{margin-bottom:3px}
+
+/* contact */
+.contact{text-align:center}
+.contact .big{font-size:clamp(1.6rem,5vw,3rem);font-weight:800;margin-bottom:10px}
+.links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0 40px;border-top:1px solid var(--line)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:.8s}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .cols-3,.works{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  section{padding:64px 0}
+  .cols-3,.works{grid-template-columns:1fr}
+  nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:#0b0720;padding:18px 24px;gap:16px;border-bottom:1px solid var(--line)}
+  nav ul.show{display:flex}
+  .menu-btn{display:block}
+  .modal .body{padding:20px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">TRUONG <b>YUNA</b></a>
+    <ul id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">Menu</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="tag">● Available for remote / freelance / contract roles</span>
+    <h1>Truong<br><span>Yuna</span></h1>
+    <p class="role">Senior UX/UI Designer · Remote Freelancer</p>
+    <p class="focus">SaaS · Fintech · EdTech · Healthcare</p>
+    <div class="btns">
+      <a class="btn primary" href="#portfolio">View my work</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b data-count="10" data-suffix="+">0</b><span>Years of experience</span></div>
+      <div class="stat"><b data-count="4">0</b><span>Markets: US, KR, JP, VN</span></div>
+      <div class="stat"><b data-count="8">0</b><span>Companies &amp; clients</span></div>
+      <div class="stat"><b data-count="4">0</b><span>Industries</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap reveal">
+    <h2>About <span>me</span></h2>
+    <p class="sub">Senior UX/UI Designer with 10+ years of experience designing web, mobile and SaaS products for international clients across the US, South Korea, Japan and Vietnam.</p>
+    <div class="grid cols-3">
+      <div class="card"><h3>End-to-end design</h3><p style="color:var(--muted)">From requirement analysis and user research to high-fidelity UI, design systems and developer handoff.</p></div>
+      <div class="card"><h3>Remote-first</h3><p style="color:var(--muted)">Works independently with cross-functional teams across time zones to ship scalable, user-centered products.</p></div>
+      <div class="card"><h3>Product thinking</h3><p style="color:var(--muted)">Handles UX strategy, UI design and stakeholder feedback, including as a sole product designer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap reveal">
+    <h2>Core <span>skills</span></h2>
+    <p class="sub">Tools and methods I use every day.</p>
+    <div class="grid cols-3">
+      <div class="card"><h3>UX &amp; Product Design</h3><div class="chips">
+        <span class="chip">UX Research</span><span class="chip">Information Architecture</span><span class="chip">User Flows</span><span class="chip">Wireframing</span><span class="chip">Prototyping</span><span class="chip">Usability Testing</span><span class="chip">Design Systems</span><span class="chip">Responsive Design</span></div></div>
+      <div class="card"><h3>Collaboration &amp; Process</h3><div class="chips">
+        <span class="chip">Remote Collaboration</span><span class="chip">Agile/Scrum</span><span class="chip">Stakeholder Communication</span><span class="chip">Developer Handoff</span><span class="chip">Product Thinking</span></div></div>
+      <div class="card"><h3>Tools</h3><div class="chips">
+        <span class="chip">Figma</span><span class="chip">Adobe XD</span><span class="chip">Adobe Creative Suite</span><span class="chip">Jira</span><span class="chip">Zeplin</span><span class="chip">Balsamiq</span><span class="chip">Sketch</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Design <span>portfolio</span></h2>
+      <p class="sub">Selected projects. Click a card for details.</p>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="works reveal" id="works"></div>
+    <div class="more reveal"><a class="btn primary" href="https://www.behance.net/truongyuna" target="_blank" rel="noopener">See full case studies on Behance →</a></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap reveal">
+    <h2>Work <span>experience</span></h2>
+    <p class="sub">A decade across startups, enterprise and telecom.</p>
+    <div class="timeline">
+      <div class="job"><span class="when">Oct 2024 – Apr 2025</span><h3>Senior UX/UI Designer – Remote Freelancer</h3><div class="co">AfterschoolBeacon (Startup, Texas, USA)</div>
+        <ul><li>Designed a full SaaS ecosystem for after-school management, including multi-level school structures.</li><li>Built UX/UI for course, student and instructor management plus a mobile check-in app for teachers.</li><li>Designed a marketing website with registration, enrollment and online payments.</li><li>Sole product designer: UX strategy, UI design and stakeholder feedback, fully remote.</li></ul></div>
+      <div class="job"><span class="when">Jul 2024 – Sep 2024</span><h3>Senior UX/UI Designer – Remote Freelancer</h3><div class="co">Skylink Company</div>
+        <ul><li>Designed UI for Touch One, a stock trading app on mobile and web.</li><li>Covered stock trading, simulation and chart analysis, plus a high-conversion launch landing page.</li><li>Coordinated with development and marketing teams to ensure timely delivery.</li></ul></div>
+      <div class="job"><span class="when">Jan 2024 – Apr 2024</span><h3>Senior UX/UI Designer – Remote Freelancer</h3><div class="co">DaouKiwoom Vietnam (South Korea)</div>
+        <ul><li>Designed SaaS dashboards and web platforms for outsourced enterprise products.</li><li>Delivered UX structure, user flows and UI systems for LMS, franchise management platforms and corporate sites.</li><li>Worked remotely with Korean PMs and developers using Figma and Jira.</li></ul></div>
+      <div class="job"><span class="when">Jan 2022 – Dec 2023</span><h3>Senior UX/UI Designer</h3><div class="co">CJ OliveNetworks Vina</div>
+        <ul><li>Led UX/UI design for internal digital products and enterprise systems.</li><li>Improved usability through UI testing and iterative design.</li></ul></div>
+      <div class="job"><span class="when">2018 – 2021</span><h3>Senior UX/UI Designer</h3><div class="co">FPT Telecom</div>
+        <ul><li>Designed UX/UI for web, mobile and TV-OTT applications.</li><li>Participated in requirement analysis and usability optimization.</li></ul></div>
+      <div class="job"><span class="when">2017 – 2018</span><h3>Senior UX/UI Designer</h3><div class="co">EDOCTOR</div>
+        <ul><li>Designed UX/UI for web and mobile medical service platforms.</li></ul></div>
+      <div class="job"><span class="when">2013 – 2016</span><h3>UX/UI &amp; Game Designer</h3><div class="co">Mobile Entertainment Corporation</div>
+        <ul><li>Designed UI/UX for social games and payment service applications.</li></ul></div>
+    </div>
+
+    <div class="grid cols-3" style="grid-template-columns:repeat(2,1fr);margin-top:50px">
+      <div class="card"><h3>Education</h3>
+        <p><b>Bachelor of Information Technology</b><br><span style="color:var(--muted)">College of Technology and Industrial Management (CTIM)</span></p>
+        <p style="margin-top:10px"><b>Business Administration</b><br><span style="color:var(--muted)">Hanoi Open University</span></p></div>
+      <div class="card"><h3>Certifications</h3>
+        <ul style="margin-left:18px;color:#d9d2f3"><li>UX Design – Interaction Design Foundation (IxDF)</li><li>UX Foundations: Interaction Design</li><li>Foundations of Project Management – Google (Coursera)</li><li>Project Management Simplified</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap reveal">
+    <p class="sub" style="margin:0 auto 14px">Let's build something people love to use.</p>
+    <div class="big">Available for <span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">remote &amp; freelance</span> projects</div>
+    <p class="sub" style="margin:0 auto">Experienced working across time zones with international teams.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:truong.yuna@gmail.com">✉ truong.yuna@gmail.com</a>
+      <a class="btn" href="tel:+84937749722">📞 +84 937 749 722</a>
+      <a class="btn" href="https://www.behance.net/truongyuna" target="_blank" rel="noopener">Behance</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Truong Yuna · Ho Chi Minh City, Vietnam</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="box">
+    <button class="x" id="closeModal" aria-label="Close">✕</button>
+    <div class="cover" id="mCover"></div>
+    <div class="body">
+      <span class="cat" id="mCat" style="color:var(--accent2);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mDesc" style="color:var(--muted)"></p>
+      <ul id="mList"></ul>
+      <div class="chips" id="mTags"></div>
+      <div style="margin-top:22px"><a class="btn primary" id="mLink" href="https://www.behance.net/truongyuna" target="_blank" rel="noopener">View case study →</a></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============ EDIT YOUR PORTFOLIO HERE ============
+   img:  path to your image, e.g. "images/touchone.jpg" (leave "" to show a gradient placeholder)
+   link: link to the Behance project / Figma prototype
+=================================================== */
+const PROJECTS = [
+  { title:"AfterschoolBeacon", cat:"SaaS", year:"2024–25", img:"", link:"https://www.behance.net/truongyuna",
+    short:"SaaS ecosystem for after-school program management.",
+    desc:"A complete platform for districts and individual schools to run after-school programs, designed end to end as the sole product designer.",
+    points:["Multi-level school structure (districts & schools)","Course, student and instructor management","Mobile check-in app for teachers","Marketing site with registration, enrollment and payments"],
+    tags:["Figma","SaaS","Mobile","Web"], grad:["#4f46e5","#8b5cf6"] },
+  { title:"Touch One", cat:"Fintech", year:"2024", img:"", link:"https://www.behance.net/truongyuna",
+    short:"Stock trading app for mobile and web.",
+    desc:"Trading experience covering order placement, practice simulation and chart analysis, plus a landing page built for product launch.",
+    points:["Stock trading and order flows","Simulation mode for beginners","Chart analysis tools","High-conversion launch landing page"],
+    tags:["Fintech","Mobile","Web","Landing page"], grad:["#0ea5e9","#6366f1"] },
+  { title:"Enterprise SaaS Dashboards", cat:"SaaS", year:"2024", img:"", link:"https://www.behance.net/truongyuna",
+    short:"LMS, franchise management and corporate sites for DaouKiwoom.",
+    desc:"Dashboards and web platforms for outsourced enterprise products across multiple industries, delivered with Korean PMs and developers.",
+    points:["Learning management systems","Franchise management platforms","Corporate websites","UI system and developer handoff"],
+    tags:["Dashboard","Design System","Jira"], grad:["#8b5cf6","#ff6b9d"], device:"laptop" },
+  { title:"CJ OliveNetworks Internal Systems", cat:"Enterprise", year:"2022–23", img:"", link:"https://www.behance.net/truongyuna",
+    short:"Internal digital products and enterprise systems.",
+    desc:"Led UX/UI for internal tools, improving usability and interaction quality through UI testing and iterative design.",
+    points:["Usability testing and iteration","Visual design aligned with business goals"],
+    tags:["Enterprise","UX Testing"], grad:["#14b8a6","#4f46e5"], device:"laptop" },
+  { title:"FPT Telecom Apps", cat:"Mobile & TV", year:"2018–21", img:"", link:"https://www.behance.net/truongyuna",
+    short:"Web, mobile and TV-OTT applications.",
+    desc:"UX/UI for consumer telecom products across screens, from requirement analysis to usability optimization.",
+    points:["Web and mobile apps","TV-OTT interface","Requirement analysis and usability optimization"],
+    tags:["Mobile","TV-OTT","Web"], grad:["#f97316","#ff6b9d"] },
+  { title:"EDOCTOR", cat:"Healthcare", year:"2017–18", img:"", link:"https://www.behance.net/truongyuna",
+    short:"Medical service platforms on web and mobile.",
+    desc:"UX/UI for healthcare service platforms connecting patients with medical services.",
+    points:["Web and mobile medical platforms"],
+    tags:["Healthcare","Mobile","Web"], grad:["#22c55e","#0ea5e9"], device:"phone" }
+];
+
+const worksEl=document.getElementById('works'), filtersEl=document.getElementById('filters');
+const cats=['All',...new Set(PROJECTS.map(p=>p.cat))];
+const cover=p=>p.img?`background-image:url('${p.img}')`:`background-image:linear-gradient(135deg,${p.grad[0]},${p.grad[1]})`;
+const LAPTOP='<div class="laptop"><i class="bar"></i><i class="side"></i><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>';
+const PHONE='<div class="phone"><i class="notch"></i><i class="p1"></i><i class="p2"></i><i class="p3"></i><i class="p4"></i></div>';
+/* p.device: "both" (default) | "laptop" | "phone". If p.img is set, your image is shown instead of the mockup. */
+const devices=p=>{
+  if(p.img) return '';
+  const d=p.device||'both';
+  return `<div class="devices ${d==='phone'?'phone-only':d==='laptop'?'laptop-only':'both'}">${d!=='phone'?LAPTOP:''}${d!=='laptop'?PHONE:''}</div>`;
+};
+
+function renderWorks(f='All'){
+  worksEl.innerHTML=PROJECTS.map((p,i)=>`
+    <article class="work ${f!=='All'&&p.cat!==f?'hidden':''}" data-i="${i}" tabindex="0">
+      <div class="cover" style="${cover(p)}">${devices(p)}</div>
+      <div class="info"><span class="cat">${p.cat} · ${p.year}</span><h3>${p.title}</h3><p>${p.short}</p></div>
+    </article>`).join('');
+}
+filtersEl.innerHTML=cats.map((c,i)=>`<button class="${i?'':'on'}" data-c="${c}">${c}</button>`).join('');
+filtersEl.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  filtersEl.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  renderWorks(b.dataset.c);
+});
+renderWorks();
+
+const modal=document.getElementById('modal');
+function openModal(i){
+  const p=PROJECTS[i];
+  mCover.style.cssText=cover(p); mCover.innerHTML=devices(p);
+  mCat.textContent=p.cat+' · '+p.year; mTitle.textContent=p.title; mDesc.textContent=p.desc;
+  mList.innerHTML=p.points.map(x=>`<li>${x}</li>`).join('');
+  mTags.innerHTML=p.tags.map(t=>`<span class="chip">${t}</span>`).join('');
+  mLink.href=p.link; modal.classList.add('open'); document.body.style.overflow='hidden';
+}
+function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
+worksEl.addEventListener('click',e=>{const w=e.target.closest('.work'); if(w) openModal(+w.dataset.i)});
+worksEl.addEventListener('keydown',e=>{if(e.key==='Enter'){const w=e.target.closest('.work'); if(w) openModal(+w.dataset.i)}});
+closeModal_btn=document.getElementById('closeModal'); closeModal_btn.onclick=closeModal;
+modal.addEventListener('click',e=>{if(e.target===modal) closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeModal()});
+
+/* mobile menu */
+const menu=document.getElementById('menu');
+document.getElementById('menuBtn').onclick=()=>menu.classList.toggle('show');
+menu.addEventListener('click',()=>menu.classList.remove('show'));
+
+/* reveal + counters */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('[data-count]').forEach(el=>{
+  const end=+el.dataset.count, suf=el.dataset.suffix||''; let n=0;
+  const t=setInterval(()=>{n++; el.textContent=n+suf; if(n>=end) clearInterval(t)},80);
+});
+
+/* starfield */
+(function(){
+  const c=document.getElementById('stars'), x=c.getContext('2d'); let s=[];
+  function size(){c.width=innerWidth;c.height=innerHeight;s=Array.from({length:Math.round(innerWidth*innerHeight/9000)},()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.3+.2,a:Math.random()}))}
+  function draw(){x.clearRect(0,0,c.width,c.height);s.forEach(p=>{p.a+=.01;x.globalAlpha=.35+.35*Math.sin(p.a);x.fillStyle='#fff';x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill()});requestAnimationFrame(draw)}
+  size();addEventListener('resize',size);
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches) draw();
+})();
+</script>
+</body>
+</html>
